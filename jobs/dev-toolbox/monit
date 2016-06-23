@@ -1,0 +1,6 @@
+check process dev-toolbox
+  with pidfile /var/vcap/sys/run/dev-toolbox.pid
+  start program "/var/vcap/jobs/dev-toolbox/bin/dev-toolbox_ctl start"
+  stop program "/var/vcap/jobs/dev-toolbox/bin/dev-toolbox_ctl stop"
+  group vcap
+

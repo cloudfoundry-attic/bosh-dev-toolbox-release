@@ -1,0 +1,10 @@
+---
+name: dev-toolbox
+templates:
+  dev-toolbox.sh.erb: bin/dev-toolbox.sh
+  dev-toolbox_ctl.erb: bin/dev-toolbox_ctl
+
+packages:
+  - jq
+
+properties: {}

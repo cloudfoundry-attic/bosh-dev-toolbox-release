@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+JOB_DIR=/var/vcap/jobs/dev-toolbox
+PIDFILE=/var/vcap/sys/run/dev-toolbox.pid
+
+declare -a LOG_DIRS=(
+  "/var/vcap/sys/log/dev-toolbox"
+  "/var/vcap/sys/log/dev-toolbox"
+)
+
+case $1 in
+
+  start)
+    $JOB_DIR/bin/dev-toolbox.sh
+
+    echo $$ > $PIDFILE
+
+    while true; do sleep 10000; done
+
+    ;;
+
+  stop)
+    kill -9 $(cat $PIDFILE)
+    ;;
+
+  *)
+    echo "Usage: dev-toolbox {start|stop}"
+    ;;
+
+esac

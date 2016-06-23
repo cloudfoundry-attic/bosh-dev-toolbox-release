@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+JOB_DIR=/var/vcap/jobs/dev-toolbox
+PKG_DIR=${JOB_DIR}/packages
+
+
+PACKAGES="jq"
+
+for package in $PACKAGES
+do
+  files=$(find -L $PKG_DIR/$package -type f -executable)
+  for file in $files
+  do
+    ln -f -s file /usr/bin/$(basename $file)
+  done
+done
