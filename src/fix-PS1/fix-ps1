@@ -1,0 +1,3 @@
+# Fix the stemcell's annoying `$PS1` error
+jq -r '.id' < /var/vcap/bosh/spec.json > /var/vcap/instance/id
+jq -r '.job.name' < /var/vcap/bosh/spec.json > /var/vcap/instance/name

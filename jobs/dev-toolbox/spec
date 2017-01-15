@@ -6,5 +6,6 @@ templates:
 
 packages:
   - jq
+  - fix-PS1
 
 properties: {}
